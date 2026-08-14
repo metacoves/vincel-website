@@ -1,7 +1,7 @@
-{
-  "version": "1.0",
-  "url": "https://vincel.netlify.app/VincelSetup.zip",
-  "sha256": "9d828e825f7b49aec7ba663f60dc42a0275c71de02955e37ae9b35cf67a3b48d",
-  "notes": "首个版本",
-  "force": false
+﻿{
+    "notes":  "",
+    "force":  false,
+    "url":  "https://vincel.netlify.app/VincelSetup.exe",
+    "version":  "1.0",
+    "sha256":  "e0903b5e6dd29a087ef8b1868d133beecf74c33cc611d37187a2d3b8f37b1340"
 }
