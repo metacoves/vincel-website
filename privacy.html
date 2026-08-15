@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私声明 · 深澈 Vincel</title>
+<style>
+  :root{
+    --bg:#F5F5F7;
+    --bg-deep:#ECECEE;
+    --panel:#FFFFFF;
+    --ink:#1D1D1F;
+    --ink-soft:#6E6E73;
+    --ink-faint:#86868B;
+    --primary:#165DFF;
+    --primary-deep:#0E42D2;
+    --primary-bg:#E8F0FF;
+    --line:#D2D2D7;
+    --line-soft:#E5E5E7;
+    --success:#34C759;
+    --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SF Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+    --radius-s:8px;
+    --radius-m:12px;
+    --radius-l:20px;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
+    --maxw:860px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:var(--font-ui);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.7;
+  }
+  a{color:var(--primary); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(255,255,255,0.82);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav .wrap{
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{font-size:18px; font-weight:700; color:var(--ink); display:flex; align-items:center; gap:8px;}
+  .brand b{color:var(--logo-blue,#0626AC);}
+  .brand .tag{
+    font-size:11px; font-weight:400; color:var(--ink-faint);
+    border:1px solid var(--line); border-radius:20px; padding:1px 8px;
+  }
+  .nav a.home{font-size:14px;}
+  main{padding:48px 24px 72px;}
+  .wrap{max-width:var(--maxw); margin:0 auto;}
+  .doc{
+    background:var(--panel);
+    border-radius:var(--radius-l);
+    box-shadow:var(--shadow-card);
+    padding:40px 48px;
+  }
+  h1{font-size:28px; margin:0 0 4px;}
+  .meta{color:var(--ink-faint); font-size:13px; margin-bottom:28px;}
+  h2{
+    font-size:18px; margin:32px 0 10px;
+    padding-left:12px; border-left:4px solid var(--primary);
+  }
+  p{margin:10px 0; font-size:14.5px; color:var(--ink);}
+  ul{margin:8px 0; padding-left:22px;}
+  li{font-size:14.5px; margin:6px 0; color:var(--ink);}
+  li b{color:var(--ink);}
+  .note{
+    background:var(--primary-bg); border-radius:var(--radius-m);
+    padding:12px 16px; font-size:13.5px; color:var(--ink);
+    margin:14px 0;
+  }
+  code{
+    font-family:var(--font-mono); font-size:12.5px;
+    background:var(--bg-deep); border-radius:6px; padding:1px 6px;
+  }
+  footer{border-top:1px solid var(--line-soft); padding:24px; text-align:center; color:var(--ink-faint); font-size:13px;}
+  @media (max-width:640px){
+    .doc{padding:24px 20px;}
+    main{padding:24px 12px 56px;}
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <a href="index.html" class="brand">深澈 <b>Vincel</b><span class="tag">v1.0</span></a>
+      <a href="index.html" class="home">← 返回首页</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+      <div class="doc">
+        <h1>隐私声明</h1>
+        <div class="meta">深澈 Vincel · 更新日期：2026年8月14日 · 适用于 Vincel v1.0 及后续版本</div>
+
+        <p>深澈 Vincel（以下简称"本软件"）是一款在您的电脑上<strong>本地运行</strong>的系统清理工具。我们深知清理工具涉及系统数据，因此采用"能不上传就不上传"的原则。本声明如实说明本软件的全部数据行为，与软件内《用户协议》及设置页说明保持一致。</p>
+
+        <h2>一、我们收集什么</h2>
+        <p>本软件仅收集用于改进产品的<strong>匿名使用数据</strong>，具体包括：</p>
+        <ul>
+          <li><b>匿名设备标识</b>：软件首次启动时随机生成的设备 ID（非硬件序列号），保存于 <code>%LOCALAPPDATA%\RogueCleaner\device_id.txt</code>，仅用于区分设备数量，无法反查您的身份。</li>
+          <li><b>基础事件</b>：软件版本号、功能使用次数（如清理、扫描、更新检查等事件类型）。</li>
+        </ul>
+        <p><strong>我们明确不收集：</strong>文件内容、浏览记录、个人身份信息（姓名、手机号、邮箱）、位置信息、Wi-Fi 信息，也不监听键盘输入。</p>
+
+        <h2>二、数据的用途与存储</h2>
+        <ul>
+          <li><b>用途</b>：仅用于统计产品使用情况、改进清理效果与产品体验，不做任何广告定向。</li>
+          <li><b>存储</b>：遥测数据经匿名登录后写入腾讯云 CloudBase 文档数据库（中国大陆节点），数据库集合权限为"所有用户不可读写"，仅开发者可通过云函数访问。</li>
+          <li><b>样本提交</b>：您主动通过"提交样本"功能上传的清理样本，仅用于扩充特征库分析（每台设备每天限 5 条，防止滥用）。</li>
+        </ul>
+
+        <h2>三、如何关闭</h2>
+        <ul>
+          <li>首次启动时弹出《用户协议》弹窗，选择"<strong>不同意并退出</strong>"则软件不会上报任何数据；</li>
+          <li>已安装用户可随时在软件内"设置 → 隐私与数据 → 匿名数据统计"关闭开关，关闭后不再上报。</li>
+        </ul>
+        <div class="note">未同意用户协议前，软件不会进行任何数据上报。</div>
+
+        <h2>四、网络行为说明</h2>
+        <ul>
+          <li><b>更新检查</b>：软件启动后会自动检查新版本，仅请求版本信息与安装包下载地址（托管于 GitHub + Netlify 静态服务）；</li>
+          <li><b>遥测上报</b>：按 20 条/5 分钟批量上报，失败后保留在本地队列重试，不强制、不后台常驻外发。</li>
+        </ul>
+
+        <h2>五、第三方</h2>
+        <p>本软件不含任何第三方广告 SDK 或跟踪 SDK。唯一的网络组件为腾讯云 CloudBase SDK（v2.32.0），仅用于上述遥测与样本提交功能。</p>
+
+        <h2>六、协议变更</h2>
+        <p>本声明可能随软件版本更新而调整，更新后将在本页面及软件内《用户协议》中同步说明。继续使用即表示您已阅读并同意本声明。</p>
+
+        <h2>七、联系我们</h2>
+        <p>如对本隐私声明有任何疑问，可通过软件内"提交样本"功能或官网首页进行反馈。</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>© 2026 深澈 Vincel · 免费版基于 GPLv3 协议开源 · <a href="privacy.html">隐私声明</a></footer>
+</body>
+</html>

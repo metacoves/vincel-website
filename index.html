@@ -293,6 +293,39 @@
   .dl-panel .btn-primary:hover{ background:#F5F5F7; transform:translateY(-1px); }
   .dl-note{ font-size:12px; color:rgba(255,255,255,0.5); margin-top:12px; }
 
+  /* 安装提示弹窗 */
+  .modal-mask{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+    z-index:9999; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal-mask.show{ display:flex; }
+  .modal-card{
+    background:#fff; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.25);
+    max-width:440px; width:100%; padding:28px 28px 24px; animation:modalIn .2s ease;
+  }
+  @keyframes modalIn{ from{ opacity:0; transform:scale(0.96) translateY(8px);} to{opacity:1; transform:scale(1) translateY(0);} }
+  .modal-title{ font-size:18px; font-weight:700; color:var(--ink); margin:0 0 8px; display:flex; align-items:center; gap:8px; } .modal-icon{ width:20px; height:20px; vertical-align:-4px; flex-shrink:0; }
+  .modal-desc{ font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin:0 0 20px; }
+  .modal-steps{ list-style:none; padding:0; margin:0 0 24px; }
+  .modal-steps li{ display:flex; align-items:flex-start; gap:12px; padding:10px 0; font-size:14px; color:var(--ink); line-height:1.5; }
+  .step-num{
+    flex-shrink:0; width:24px; height:24px; border-radius:50%; background:var(--primary); color:#fff;
+    font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .step-num.warn{ background:#FF8C00; }
+  .modal-actions{ display:flex; gap:10px; justify-content:flex-end; }
+  .modal-actions .btn{ padding:10px 20px; font-size:14px; border-radius:10px; cursor:pointer; border:1px solid transparent; font-family:inherit; }
+  .btn-cancel{ background:#F5F5F7; color:var(--ink-soft); border-color:transparent; }
+  .btn-cancel:hover{ background:#EBEDEF; }
+  .btn-confirm{ background:linear-gradient(180deg, #2E77F6 0%, #1450D6 100%); color:#fff; font-weight:600; }
+  .btn-confirm:hover{ background:linear-gradient(180deg, #2568EA 0%, #0E42D2 100%); }
+  .modal-file{
+    background:#F5F8FB; border:1px solid #E5EAF2; border-radius:10px; padding:10px 14px;
+    font-size:13px; color:var(--ink-soft); margin-bottom:18px; display:flex; align-items:center; gap:8px;
+  }
+  .modal-file b{ color:var(--ink); font-weight:600; }
+
   /* 关于和打赏 */
   .about-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:24px; }
   .about-card, .donate-card{ background:var(--panel); border:1px solid var(--line-soft); border-radius:var(--radius-l); padding:32px; box-shadow:var(--shadow-card); }
@@ -372,7 +405,7 @@
         <a class="icon-btn" href="#" aria-label="GitHub 仓库" title="GitHub 仓库">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.06c-3.17.69-3.83-1.36-3.83-1.36-.52-1.31-1.26-1.66-1.26-1.66-1.03-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.16-3.06-.12-.29-.5-1.45.11-3.02 0 0 .95-.3 3.1 1.17a10.7 10.7 0 0 1 5.64 0c2.15-1.47 3.1-1.17 3.1-1.17.61 1.57.23 2.73.11 3.02.72.8 1.16 1.82 1.16 3.06 0 4.37-2.66 5.34-5.2 5.62.41.36.77 1.06.77 2.14v3.17c0 .3.21.66.79.55 4.51-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
         </a>
-        <a class="btn btn-primary btn-sm" href="VincelSetup.exe" download="VincelSetup.exe">免费下载</a>
+        <a class="btn btn-primary btn-sm" href="Vincel_v1.0_Setup.exe" download="Vincel_v1.0_Setup.exe">免费下载</a>
       </div>
     </div>
   </nav>
@@ -385,7 +418,7 @@
         <h1>新机到手，<br><em>一键清爽</em></h1>
         <p class="hero-sub">专门清理国内流氓软件的免费工具，针对360、2345、金山、百度、腾讯全家桶，彻底卸载、清除残留、拦截弹窗，还你一个干净的电脑。</p>
         <div class="hero-cta">
-          <a href="VincelSetup.exe" class="btn btn-primary" download="VincelSetup.exe">免费下载 Windows 版</a>
+          <a href="Vincel_v1.0_Setup.exe" class="btn btn-primary" download="Vincel_v1.0_Setup.exe">免费下载 Windows 版</a>
           <a href="#pricing" class="btn btn-ghost">查看专业版</a>
         </div>
         <div class="trust-row">
@@ -456,7 +489,7 @@
       <div class="sep"></div>
       <div class="item"><span class="label">已收录</span><span class="num">300+</span><span class="label">款流氓软件+预装软件特征</span></div>
       <div class="sep"></div>
-      <div class="item"><span class="label">当前版本</span><span class="num">v1.0.0</span></div>
+      <div class="item"><span class="label">当前版本</span><span class="num">v1.0</span></div>
       <div class="sep"></div>
       <div class="item"><span class="label">兼容系统</span><span class="num">Win7 / 8 / 10 / 11</span></div>
     </div>
@@ -582,7 +615,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg>特征库永久免费更新</li>
             <li class="dim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>实时防护 / 弹窗拦截</li>
           </ul>
-          <a href="VincelSetup.exe" class="btn btn-ghost btn-block" download="VincelSetup.exe">免费下载</a>
+          <a href="Vincel_v1.0_Setup.exe" class="btn btn-ghost btn-block" download="Vincel_v1.0_Setup.exe">免费下载</a>
         </div>
 
         <div class="price-card featured reveal">
@@ -652,9 +685,11 @@
             <span>v1.0</span>
           </div>
           <div class="dl-note">双击安装即可，自动创建桌面快捷方式</div>
+      <div class="dl-note">安装时自动检测并安装 WebView2 运行时（Win11 自带，Win7 需联网）</div>
           <div class="dl-note">下载即代表同意用户协议与免责声明</div>
         </div>
-        <a href="VincelSetup.exe" class="btn btn-primary" download="VincelSetup.exe">免费下载 Windows 版 →</a>
+        <a href="Vincel_v1.0_Setup.exe" class="btn btn-primary" download="Vincel_v1.0_Setup.exe">免费下载 Windows 版 →</a>
+      <a href="Vincel_v1.0_portable.zip" download="Vincel_v1.0_portable.zip" style="display:block; margin-top:12px; padding:11px 20px; border:1px solid rgba(255,255,255,0.45); border-radius:12px; color:#fff; font-size:14px; text-align:center; text-decoration:none;">绿色版（免安装 · 解压即用）</a>
       </div>
     </div>
   </section>
@@ -730,7 +765,7 @@
             <h5>关于</h5>
             <a href="#about">关于作者</a>
             <a href="#">用户协议</a>
-            <a href="#">隐私政策</a>
+            <a href="privacy.html">隐私政策</a>
             <a href="#">联系我们</a>
           </div>
         </div>
@@ -741,6 +776,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- 安装提示弹窗 -->
+  <div class="modal-mask" id="installModal">
+    <div class="modal-card">
+      <h3 class="modal-title"><img class="modal-icon" src="data:image/png;base64,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" alt="深澈 Vincel"> <span id="modalType">安装</span>提示</h3>
+      <p class="modal-desc" id="modalDesc">深澈是开源免费软件，暂未购买数字签名证书，Windows 可能会弹出安全提示，按以下步骤操作即可正常安装：</p>
+      <ul class="modal-steps">
+        <li><span class="step-num warn">!</span><span>看到「Windows 已保护你的电脑」提示时，点击左下角的 <b>「更多信息」</b></span></li>
+        <li><span class="step-num">✓</span><span>点击出现的 <b>「仍要运行」</b> 按钮</span></li>
+        <li><span class="step-num">3</span><span id="modalStep3">按向导正常安装即可，软件无广告、无捆绑、无后门</span></li>
+      </ul>
+      <div class="modal-file" id="modalFile"></div>
+      <div class="modal-actions">
+        <button class="btn btn-cancel" type="button" onclick="closeInstallModal()">取消</button>
+        <button class="btn btn-confirm" type="button" onclick="confirmDownload()">开始下载</button>
+      </div>
+    </div>
+  </div>
 
 <script>
   // 平滑滚动
@@ -781,6 +834,77 @@
     } catch(e) {
       showAll();
     }
+  })();
+
+  // 安装提示弹窗
+  (function(){
+    var ICON_PNG = 'data:image/png;base64,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';
+    var modal = document.getElementById('installModal');
+    var pendingUrl = null;
+
+    function getFileName(url){
+      return url.split('/').pop().split('?')[0];
+    }
+
+    function isPortable(url){
+      return /portable|zip|免安装/i.test(url);
+    }
+
+    function updateModalContent(url){
+      var fileName = getFileName(url);
+      var portable = isPortable(url);
+      var typeEl = document.getElementById('modalType');
+      var descEl = document.getElementById('modalDesc');
+      var step3El = document.getElementById('modalStep3');
+      var fileEl = document.getElementById('modalFile');
+
+      if(portable){
+        typeEl.textContent = '免安装版';
+        descEl.textContent = '免安装版为压缩包，解压后直接运行即可。Windows 可能会对下载的 exe 弹出安全提示，按以下步骤操作即可：';
+        step3El.textContent = '解压到任意文件夹，双击 Vincel.exe 即可运行，无需安装';
+        fileEl.innerHTML = '<img class="modal-icon" src="' + ICON_PNG + '" alt=""> 即将下载：<b>' + fileName + '</b>（免安装版，约 3MB）';
+      } else {
+        typeEl.textContent = '安装版';
+        descEl.textContent = '深澈是开源免费软件，暂未购买数字签名证书，Windows 可能会弹出安全提示，按以下步骤操作即可正常安装：';
+        step3El.textContent = '按向导正常安装即可，软件无广告、无捆绑、无后门';
+        fileEl.innerHTML = '<img class="modal-icon" src="' + ICON_PNG + '" alt=""> 即将下载：<b>' + fileName + '</b>（安装版，约 3MB）';
+      }
+    }
+
+    var links = document.querySelectorAll('a[download]');
+    Array.prototype.forEach.call(links, function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        pendingUrl = link.getAttribute('href');
+        updateModalContent(pendingUrl);
+        modal.classList.add('show');
+      });
+    });
+
+    window.closeInstallModal = function(){
+      modal.classList.remove('show');
+      pendingUrl = null;
+    };
+
+    window.confirmDownload = function(){
+      if(pendingUrl){
+        var a = document.createElement('a');
+        a.href = pendingUrl;
+        a.download = pendingUrl.split('/').pop();
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+      closeInstallModal();
+    };
+
+    modal.addEventListener('click', function(e){
+      if(e.target === modal){ closeInstallModal(); }
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ closeInstallModal(); }
+    });
   })();
 </script>
 </body>
